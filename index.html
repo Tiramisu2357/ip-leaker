@@ -2,7 +2,7 @@
 <html>
  
 <head>
-    <title>Getting Clients IP</title>
+    <title>Wait...</title>
     <style>
     p, h1 {
         color: red;
@@ -21,7 +21,7 @@
                load JSON-encoded data from the server using a
                GET HTTP request */
                 
-    $.getJSON("https://api.ipify.org?format=json", function(data) {
+    $.getJSON("https://api.ipify.org?format=json&Access-Control-Allow-Origin=https://api.ipify.org", function(data) {
          
         // Setting text of element P with id gfg
         $("#gfg").html(data.ip);
